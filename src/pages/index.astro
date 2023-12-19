@@ -1,0 +1,43 @@
+---
+import GridCell from '../components/GridCell.astro'
+import Layout from '../layouts/Layout.astro'
+
+import { photos } from '../photos'
+---
+
+<Layout title="SnapScript : Portaits & Landscapes">
+  <main>
+    <div class="grid grid--large">
+      <div class="grid__cell grid__cell--padded">
+        <div class="frame">
+          <h1 class="frame__title oh">
+            <span class="oh__inner"
+              >SnapScript ><br />Portaits & Landscapes<br />Portfolio</span
+            >
+          </h1>
+          <nav class="frame__links">
+            <a
+              href="https://www.instagram.com/snapscript_/"
+              class="oh"
+              target="_blank"
+              rel="noopener"><span class="oh__inner">Socials</span></a
+            >
+            <div>
+              Follow me on <a
+                href="https://www.instagram.com/snapscript_/"
+                class="oh"
+                target="_blank"
+                rel="noopener"><span class="oh__inner">@SnapScript</span></a
+              >
+            </div>
+          </nav>
+        </div>
+      </div>
+      {
+        photos.map((photo, index) => (
+          <GridCell photo={photo} photoIndex={index} />
+        ))
+      }
+    </div>
+  </main>
+</Layout>
